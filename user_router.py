@@ -8,7 +8,7 @@ from db_connection import get_db
 
 router = APIRouter()
 
-@router.post(f"/user/auth/")
+@router.post("/user/auth/")
 async def auth_user(user_in: user_models.UserIn, db: Session = Depends(get_db)):
 
     user_in_db = db.query(user_db.UserInDB).get(user_in.username)

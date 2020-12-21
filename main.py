@@ -36,6 +36,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+async def home():
+    return {"message": "Bienvenido a TicDrive"}
 
 @app.get("/listfiles")
 async def files():
